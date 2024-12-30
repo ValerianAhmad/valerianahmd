@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --color-black: #1a1a1a;
+  --color-white: #ffffff;
+  --color-ungu: #8685ef;
+  --text-color: #ffffff;
+  --text-color-opacity: rgba(255, 255, 255, 0.5);
+}
+
+.container {
+  width: 80%;
+  margin-inline: auto;
+}
+
+.navbar {
+  width: 100%;
+  padding: 25px 0 25px 0;
+  position: absolute;
+}
+
+.navbar .navbar-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  background-color: #555;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  z-index: 1;
+  margin-top: 5px; /* Jarak antara tooltip dan elemen */
+}
+
+.menu li:hover .tooltip,
+.social-icon:hover .tooltip {
+  display: block; /* Menampilkan tooltip saat hover */
+  opacity: 100%;
+}
+
+.social {
+  display: flex;
+}
+
+.social-icon {
+  position: relative; /* Agar tooltip dapat diposisikan relatif terhadap ikon */
+  color: white;
+  margin-left: 10px;
+}
+
+.social-icon .tooltip {
+  bottom: -30px; /* Menempatkan tooltip di bawah ikon */
+  left: 50%;
+  transform: translateX(-50%); /* Memusatkan tooltip di bawah ikon */
+}
+
+.social-icon:hover :hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.navbar .navbar-box .logo {
+  background-color: var(--color-white);
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.navbar .navbar-box .logo p {
+  font-weight: bold;
+}
+
+.navbar .navbar-box .menu {
+  display: flex;
+  gap: 40px;
+}
+
+.navbar .navbar-box .menu li {
+  list-style-type: none;
+}
+
+.navbar .navbar-box .menu li a {
+  color: var(--text-color-opacity);
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.navbar .navbar-box .social {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar .navbar-box .social a {
+  color: var(--text-color-opacity);
+  text-decoration: none;
+}
+
+.navbar .navbar-box .menu li a:hover {
+  filter: drop-shadow(10px 7px 10px var(--color-white));
+}
+
+.navbar .navbar-box .menu li a:hover,
+.navbar .navbar-box .social a:hover {
+  color: var(--text-color);
+}
+
+.hamburger {
+  padding: 0;
+  margin-left: 20px;
+  height: 24px;
+  display: none;
+}
+
+.hamburger .hamburger-box {
+  width: 30px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: white;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: white;
+}
+
+.header {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  opacity: 1;
+  background-image: linear-gradient(#1b1b1b 4px, transparent 4px),
+    linear-gradient(to right, #1b1b1b 4px, #1a1a1a 4px);
+  background-size: 80px 80px;
+  padding-top: 150px;
+  padding-bottom: 100px;
+}
+
+.header .header-box {
+  text-align: center;
+}
+
+.header .header-box .overlay img {
+  border-radius: 50%;
+  width: 200px;
+  margin-top: -45px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.header .header-box h3 {
+  color: var(--text-color-opacity);
+  font-weight: 500;
+}
+
+.header .header-box p {
+  color: var(--text-color-opacity);
+  font-weight: 500;
+}
+
+.header .header-box h2 {
+  color: var(--text-color);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.header .header-box h1 {
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+.title {
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--color-black);
+  letter-spacing: 2px;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar .navbar-box .menu {
+    position: absolute;
+    flex-direction: column;
+    top: 100px;
+    gap: 0;
+    background-color: var(--color-white);
+    width: 80%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all 0.2s ease;
+    opacity: 0;
+  }
+
+  .navbar .navbar-box .menu.menu-active {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  .navbar .navbar-box .menu li {
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar .navbar-box .menu li:hover {
+    background-color: var(--color-ungu);
+  }
+
+  .navbar .navbar-box .menu li a {
+    color: var(--color-black);
+    font-weight: bold;
+  }
+  .navbar .navbar-box .social {
+    margin-left: center;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
