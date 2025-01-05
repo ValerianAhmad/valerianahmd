@@ -35,7 +35,7 @@
   display: none;
   position: absolute;
   background-color: #555;
-  color: white;
+  color: vat(--color-white);
   text-align: center;
   border-radius: 5px;
   padding: 5px;
@@ -208,11 +208,12 @@
     flex-direction: column;
     top: 100px;
     gap: 0;
-    background-color: var(--color-white);
+    background-color: transparent;
+    backdrop-filter: blur(10px);
     width: 80%;
     transform: scaleY(0);
     transform-origin: top;
-    transition: all 0.2s ease;
+    transition: all 0.5s ease;
     opacity: 0;
   }
 
@@ -224,7 +225,7 @@
   .navbar .navbar-box .menu li {
     text-align: center;
     padding: 15px;
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   .navbar .navbar-box .menu li:hover {
@@ -232,9 +233,10 @@
   }
 
   .navbar .navbar-box .menu li a {
-    color: var(--color-black);
+    color: var(--color-white);
     font-weight: bold;
   }
+
   .navbar .navbar-box .social {
     margin-left: center;
   }
