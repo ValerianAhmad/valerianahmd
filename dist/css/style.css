@@ -243,3 +243,45 @@
     display: block;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .header .header-box .overlay img {
+    width: 150px;
+  }
+
+  .header .header-box h1 {
+    font-size: 40px;
+  }
+
+  .header .header-box h2 {
+    font-size: 25px;
+  }
+
+  .header .header-box p {
+    font-size: 15px;
+  }
+
+  .header .header-box h3 {
+    font-size: 15px;
+  }
+
+  .navbar .navbar-box .menu {
+    width: 100%;
+  }
+
+  .navbar .navbar-box .menu li {
+    padding: 10px;
+  }
+
+  .navbar .navbar-box .menu li a {
+    font-size: 13px;
+  }
+
+  .navbar .navbar-box .social {
+    gap: 10px;
+  }
+
+  .navbar .navbar-box .social a {
+    font-size: 13px;
+  }
+}
